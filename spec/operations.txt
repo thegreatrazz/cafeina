@@ -1,0 +1,62 @@
+
+# Arithmetic
+
+a + b           Addition
+a - b
+a * b  
+a / b
+a % b
+a++
+++a
+b++
+++b
+
+
+# Relational
+
+a == b
+a != b
+a > b
+a < b
+a >= b
+a <= b
+
+
+# Logical
+
+a && b
+a || b
+!a
+
+
+# Bitwise
+
+a & b
+a | b
+a ^ b
+a << b
+a >> b
+
+
+# Assignment
+
+a = b
+a += b
+a -= b
+a *= b
+a /= b
+a %= b
+a <<= b
+a >>= b
+a &= b
+a ^= b
+a |= b
+
+
+# Misc.
+
+a(b)            Call operation
+a[b]            Index operation
+^a              Return a pointer to the value
+@a              Dereference the pointer
+sizeof()        Binary size of a variable

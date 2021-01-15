@@ -1,0 +1,14 @@
+
+proc main
+{
+    let a = 1;
+    let b = 1;
+    let c = 1;
+
+    while a < 100 {
+        println(c);
+        a = b;
+        b = c;
+        c = a + b;
+    }
+}

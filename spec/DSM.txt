@@ -1,0 +1,15 @@
+
+PROC_DECL   := "proc" PROC_QUAL* IDENTIFIER PROC_ARGS? PROC_BODY
+PROC_ARGS   := "(" ( PRO PROC_ARG ()? ) ")"
+PROC_ARG    := IDENTIFIER ":" TYPE
+
+IDENTIFIER  :=
+
+TYPE_INT    := "int" | "uint" | "u8" | "i8" | "u16" | "i16" | "u32" | "i32" | "u64" | "i64"
+TYPE_FLOAT  := "float" | "double" | "number"
+TYPE_STR    := "char" | "string"
+TYPE_REF    := "object" | "reference"
+TYPE_PRIM   := TYPE_INT | TYPE_FLOAT | TYPE_STR | TYPE_REF
+TYPE_GEN    := TYPE "<" TYPE_GEN_PM ">"
+TYPE_GEN_PM := TYPE ( "," TYPE )*
+TYPE        := TYPE_PRIM | IDENTIFIER | TYPE_GEN
