@@ -1,5 +1,7 @@
 {
+  "version": "0.1.0-dev",
   "dependencies": {
+    "commander": "^7.1.0",
     "flex-js": "^1.0.5",
     "lex-bnf": "^0.3.3",
     "tokenizr": "^1.6.3"

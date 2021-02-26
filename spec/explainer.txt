@@ -1,0 +1,80 @@
+package example;        // package name (optional for entry points,
+                        //               required for libraries)
+
+use cafe.io;            // adds all exports to file scope
+use cafe.math as Math;  // adds all exports to the Math object
+
+// variables deduce the type from the initial value,
+// but the type can still be manually specified.
+var name = "Raresh Nistor";
+var birthday: int = 20010420;
+
+// constants are evaluated before `main' is called and may not change during
+// the program's lifetime.
+const PI = 3.14159;
+
+// procedures are declared like constants.
+// arguments may be ommited if there are none,
+// the return type is deduced from the return values
+const helloWorld: procedure = proc
+{
+    println("Hello world!");
+    return true;
+};
+
+// for anything in this file to be used outside must be exported.
+// the exported values are available with the package above.
+// this main procedure for example will be `example.main'.
+export const main = proc (args: list): int
+{
+    println("Hello world!");
+    return 0;
+};
+
+// procedures with the `func' keyword are marked a functions.
+// these procedures are not allowed to make changes to the environment and are
+// required to at least one argument and a return value.
+const factorial = func (n: int)
+{
+    if (n < 0) throw "n must be >=0";
+
+    // no ternary operator, `if` can also be a value.
+    return if (n == 0) 1; else n * factorial(n - 1);
+};
+
+// arrays are untyped and can hold any value
+var cities: array = [
+    "Auckland", 1717500,
+    "Christchurch", 394700,
+    "Wellington", 436100
+];
+
+// objects work similarly to how they work in JavaScript.
+// they are effectively a map of string to object.
+// no type checking will be done when indexing this object
+var black = {
+    red = 0,            // deduced type
+    green: int = 0,     // explicit type
+    blue = 0
+};
+
+// object creator pattern
+export const newColor = proc (r: int, g: int, b: int) : object {
+    var color = {};
+    color["red"] = r;
+    color["green"] = g;
+    color["blue"] = b;
+    color["toHex"] = func (): string
+        return "#" + color.r.hex(2) + color.g.hex(2) + color.b.hex(2);
+
+    return color;
+}
+
+// class
+export const Color = class {
+    var red: int;
+    var green: int;
+    var blue: int;
+
+
+}

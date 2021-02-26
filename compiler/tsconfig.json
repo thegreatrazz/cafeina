@@ -2,7 +2,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "ESNext",
-    "module": "CommonJS"
+    "module": "CommonJS",
+    "sourceMap": true
   },
   "include": ["src/**/*.ts"]
 }

@@ -1,5 +1,6 @@
+package examples.fib;
 
-proc main
+const main = proc
 {
     let a = 1;
     let b = 1;

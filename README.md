@@ -36,10 +36,10 @@ And will generate this C code:
 void _root_init(_cafe_Clojure* clojure)
 {
     clojure = _cafe_Clojure_push(clojure);
- 
+
     // use io = cafelib.io;
     _cafe_Clojure* io = _cafe_Clojure_require("cafelib.io");
-    
+
 
     _root_main(clojure);
 }
@@ -48,4 +48,14 @@ void _root_main(_cafe_Clojure* clojure)
 {
 
 }
+```
+
+## Layout
+
+```
+cafeina
++---compiler        - The compiler. Currently written in JavaScript.
++---examples        - Program examples.
++---foundation      - Foundation library. Written in Cafeina and C++.
+\---spec            - The language spec.
 ```

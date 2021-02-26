@@ -1,0 +1,29 @@
+package example;
+
+use cafe.io;
+use cafe.math as Math;
+
+var name = "Raresh Nistor";
+var birthday: int = 20010420;
+const PI = 3.14159;
+
+const helloWorld: procedure = proc
+{
+    println("Hello world!");
+};
+
+export const main = proc (args: list): int
+{
+    println("Hello world!");
+    println("factorial(3): " + factorial(3));
+    return 0;
+};
+
+export const factorial = func (n: int)
+{
+    if (n < 0) throw "n must be >=0";
+    return if (n == 0) 1; else n * factorial(n - 1);
+};
+
+export const factorial = func (n: int)
+    return if (n == 0) 1; else n * factorial(n - 1);

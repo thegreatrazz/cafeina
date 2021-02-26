@@ -1,62 +1,68 @@
 
-# Arithmetic
+	# Arithmetic
 
-a + b           Addition
-a - b
-a * b  
-a / b
-a % b
-a++
-++a
-b++
-++b
-
-
-# Relational
-
-a == b
-a != b
-a > b
-a < b
-a >= b
-a <= b
+4	a + b           Addition                        a#__plus(b)
+4	a - b           Subtraction                     a#__minus(b)
+3	a * b           Multiplication                  a#__times(b)
+3	a / b           Division                        a#__dividedBy(b)
+3	a % b           Modulo                          a#__remainderOf(b)
+2   +a              Unary Plus                      a#__unaryPlus()
+2   -a              Unary Minus                     a#__unaryMinus()
+2	a++             Post-increment                  a#__postIncrement()
+2	++a             Pre-increment                   a#__preIncrement()
+1	a--             Post-decrement                  a#__postDecrement()
+1	--a             Pre-decrement                   a#__preDecrement()
 
 
-# Logical
+	# Relational
 
-a && b
-a || b
-!a
-
-
-# Bitwise
-
-a & b
-a | b
-a ^ b
-a << b
-a >> b
+7	a == b          Equal                           a#equals(b)
+7	a === b         Identity equal                  -- like Java (==)
+7	a != b          Not Equal                       a#__notEquals(b)
+6	a <=> b         Compare                         a#compareTo(b)
+6	a > b           Greater than                    ^ a#compareTo(b) > 0
+6	a < b           Less than                       ^ a#compareTo(b) < 0
+6	a >= b          Greater than or equals          ^ a#compareTo(b) >= 0
+6	a <= b          Less than or equals             ^ a#compareTo(b) <= 0
 
 
-# Assignment
+	# Logical
 
-a = b
-a += b
-a -= b
-a *= b
-a /= b
-a %= b
-a <<= b
-a >>= b
-a &= b
-a ^= b
-a |= b
+11	a && b          Logical AND                     -- values coerced to bool
+12	a || b          Logical OR                      -- ^^
+2	!a              Logical NOT                     -- ^^
 
 
-# Misc.
+	# Bitwise
 
-a(b)            Call operation
-a[b]            Index operation
-^a              Return a pointer to the value
-@a              Dereference the pointer
-sizeof()        Binary size of a variable
+2   ~a              Bitwise NOT                     a#__bitwiseNot()
+8	a & b           Bitwise AND                     a#__bitwiseAnd(b)
+10	a | b           Bitwise OR                      a#__bitwiseOr(b)
+9	a ^ b           Bitwise XOR                     a#__bitwiseXor(b)
+5	a << b          Bitshift left                   a#__bitshiftLeft(b)
+5	a >> b          Bitshift right                  a#__bitshiftRight(b)
+
+
+	# Assignment
+
+14	a = b           Assignment                      -- not overridable
+14	a += b          Add to                          ^ a = a + b
+14	a -= b          Subtract                        ^ a = a - b
+14	a *= b          Multiply by                     ^ a = a * b
+14	a /= b          Divide by                       ^ a = a / b
+14	a %= b          Modulo                          ^ a = a % b
+14	a <<= b         Bitshift left                   ^ a = a << b
+14	a >>= b         Bitshift right                  ^ a = a >> b
+14	a &= b          Bitwise AND                     ^ a = a & b
+14	a ^= b          Bitwise XOR                     ^ a = a ^ b
+14	a |= b          Bitwise OR                      ^ a = a | b
+
+
+	# Misc.
+
+1	a(b...)         Call operation                  a#__invoke(b...)
+1	a[b]            Index operation                 a#__index(b)
+1   a.b             Access operation                a#__access(b)
+2	^a              Return a pointer to the value   a#__pointerTo()
+2	@a              Dereference the pointer         a#__at()
+2	sizeof(a)       Binary size of a variable       -- not overridable
